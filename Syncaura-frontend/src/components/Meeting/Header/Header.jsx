@@ -17,7 +17,7 @@ const Header = ({ setOpen }) => {
     weekday: "long",
   });
 
-  // Convert backend role into user-friendly display name
+  // Convert backend role into display name
   const getRoleName = () => {
     switch (user?.role?.toLowerCase()) {
       case "admin":
@@ -29,14 +29,14 @@ const Header = ({ setOpen }) => {
         return "Co-Admin";
 
       case "user":
-        return "Employee";
+        return "User";
 
       default:
-        return "Employee";
+        return "User";
     }
   };
 
-  // Get first letter for avatar
+  // Get user's first letter for avatar
   const getInitial = () => {
     return (
       user?.first_name?.charAt(0)?.toUpperCase() ||
